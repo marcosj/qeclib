@@ -59,6 +59,7 @@ def inv(A: np.ndarray) -> np.ndarray:
 
 def quot(ker_of: np.ndarray, mod_by: np.ndarray) -> np.ndarray:
     r'''Computes $L_Z = \ker(H_X) / \operatorname{row}(H_Z) and L_X = \ker(H_Z) / \operatorname{row}(H_X)$'''
+    n = ker_of.shape[1]
     candidates = null(ker_of)
     R_mod, piv_mod = rref(mod_by)
     ech = [(row.copy(), p) for row, p in zip(R_mod, piv_mod)]
